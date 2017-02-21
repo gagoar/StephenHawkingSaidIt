@@ -47,7 +47,9 @@ export default class App extends Component {
     let {text, speakInstance} = this.state;
 
     if (text) {
-      speakInstance.speak({text, callback: this._handleWav.bind(this)});
+      speakInstance
+        .speak({text})
+        .then(this._handleWav.bind(this));
     }
   }
 
@@ -56,7 +58,7 @@ export default class App extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>stephen hawkins said it!</h2>
+          <h2>Stephen Hawking said it!</h2>
         </div>
         <TextArea
           placeholder={`write something!`}

@@ -14,8 +14,14 @@ class Conduct {
   }
 
   speak({text, callback}) {
-    this.worker.onmessage = _handleMessage.bind(null, callback);
+
+    let promise = new Promise((resolve, reject) => {
+      this.worker.onmessage = _handleMessage.bind(null, resolve);
+    });
+
     this.worker.postMessage({text});
+
+    return promise;
   }
 
 };
