@@ -1,24 +1,203 @@
 .App {
+  padding: 0 20px;
+}
+
+.App:after {
+  content: "Text effect insipired by https://codepen.io/mandymichael/pen/VprZaq";
+  font-size: 10px;
+  display: block;
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  color: #e3b62d;
+}
+
+.App-header h2 {
+  font-weight: normal;
+  color: #2232b1;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.App-header span:first-child {
+  display: inline-block;
+  background-color: #fff;
+  padding: 4px;
 }
 
 .App-intro {
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.Material-form-group {
+  position: relative;
+}
+
+textarea {
+  font-size: 2rem;
+  color: #2232b1;
+  padding: 10px 20px 10px 10px;
+  display: block;
+  width: 100%;
+  height: 266px;
+  border: none;
+  background-color: rgba(255,255,255, 0.9);
+}
+
+textarea:focus {
+  outline: none;
+}
+
+@media (min-width: 900px) {
+  .App {
+    width: 50%;
+    font-size: 1rem;
+    float: right;
+  }
+
+  .App-header h2 {
+    margin-top: 140px;
+  }
+
+  .App-header span:first-child {
+    background-color: transparent;
+  }
+
+  textarea {
+    background-color: rgba(117, 117, 117, 0.2);
+  }
+}
+
+/* BOTTOM BAR */
+
+.Bttm-brdr {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.Bttm-brdr:before,
+.Bttm-brdr:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #2232b1;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.Bttm-brdr:before {
+  left: 50%;
+}
+
+.Bttm-brdr:after {
+  right: 50%;
+}
+
+textarea:focus ~ .Bttm-brdr:before,
+textarea:focus ~ .Bttm-brdr:after {
+  width: 50%;
+}
+
+
+/* HIGHLIGHTER */
+
+.Focus {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+textarea:focus ~ .Focus {
+  -webkit-animation: textareaHighlighter 0.3s ease;
+  -moz-animation: textareaHighlighter 0.3s ease;
+  animation: textareaHighlighter 0.3s ease;
+}
+
+audio {
+  width: 100%;
+}
+
+/* BUTTON */
+
+.btn {
+  display: block;
+  line-height: 36px;
+  padding: .5rem 2rem;
+  margin: 40px auto;
+  background: #d54787;
+  border: #d54787;
+  border-radius: 2px;
+  text-transform: uppercase;
+  vertical-align: middle;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  outline: 0;
+  text-align: center;
+  letter-spacing: .5px;
+
+  transition: 2s ease-out;
+
+  -webkit-tap-highlight-color: transparent;
+
+  background-image: radial-gradient(ellipse at center, rgba(255,255,255,.2) 0%, rgba(255,255,255,.2) 90%, rgba(255,255,255,0) 90%, rgba(255,255,255,0) 100%);
+  background-size: 0px 0px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.btn:focus {
+  background-color: rgb(64, 78, 134);
+}
+
+@keyframes ripple {
+  0% {
+    background-size: 10px 10px;
+  }
+  100% {
+    background-size: 250px 250px;
+  }
+}
+
+button:focus:not(:active) {
+  animation: ripple .5s ease-out;
+}
+
+/* ANIMATIONS */
+
+@-webkit-keyframes textareaHighlighter {
+  from {
+    background: #2232b1;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+
+@-moz-keyframes textareaHighlighter {
+  from {
+    background: #2232b1;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+
+@keyframes textareaHighlighter {
+  from {
+    background: #2232b1;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
 }

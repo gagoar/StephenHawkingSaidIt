@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import TextArea from './TextArea';
 import Conduct from './conduct';
 
-import logo from './US08280561-20121002-D00000.png';
+//import picture from './hawkings.jpg';
 import './App.css';
 
 const SCRIPT_TO_LOAD = '/js/speakWorker.js';
@@ -57,16 +57,21 @@ export default class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Stephen Hawking said it!</h2>
+          <h2><span>Said by</span> <span className="heading">Stephen Hawking</span></h2>
         </div>
-        <TextArea
-          placeholder={`write something!`}
-          onChange={this._handleText.bind(this)}
-          maxLength={140}
-        />
-        <button onClick={this._handleSpeak.bind(this)}> Tell me things</button>
+        <div className="Material-form-group">
+          <TextArea
+            placeholder="write something!"
+            value={""}
+            onChange={this._handleText.bind(this)}
+            maxLength={140}
+          />
+          <span className="Focus"></span>
+          <span className="Bttm-brdr"></span>
+        </div>
         <AudioElement src={this.state.audioSrc}/>
+        <button className="btn" onClick={this._handleSpeak.bind(this)}> Speak up</button>
+        
       </div>
     );
   }
