@@ -13,12 +13,12 @@ body {
   height: 100%;
   font-family: 'VT323', monospace;
   background-image: url('hawk.png'), linear-gradient(10deg, rgba(244, 235, 160, 1) 43%, rgba(192, 250, 202, 1) 43%);
-  /*linear-gradient(10deg, rgba(244,235,160,1) 43%,rgb(210, 84, 208) 43%)*/
   background-size: auto 100%;
   background-color: #000;
   background-repeat: no-repeat;
   color: #fff;
 }
+/* Text effect insipired by https://codepen.io/mandymichael/pen/VprZaq */
 
 .heading {
   display: block;

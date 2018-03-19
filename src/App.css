@@ -2,16 +2,6 @@
   padding: 0 20px;
 }
 
-.App:after {
-  content: "Text effect insipired by https://codepen.io/mandymichael/pen/VprZaq";
-  font-size: 10px;
-  display: block;
-  position: absolute;
-  bottom: 5px;
-  left: 5px;
-  color: #e3b62d;
-}
-
 .App-header h2 {
   font-weight: normal;
   color: #2232b1;
